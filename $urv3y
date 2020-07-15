@@ -1,0 +1,77 @@
+                    #Welcum 2 Kappa legit 10/10 Survey
+                #Plx enjoi n donat bons pls :^)
+import sys
+def survey():
+    print("Hi, welcome to my short and trash personal survey. Are you interested in completing this survey?")
+    while True:
+        answer = input("Yes or no? ")
+        if answer.lower() == "yes":
+            yes()
+            break
+        elif answer.lower() == "no":
+            no()
+        else:
+            print("Invalid answer")
+def yes():
+    name = input("First question, what is your name? ")
+    print(f"Well hello {name} :^). Next question...")
+    while True:
+        age = input("How old are you? ")
+        if not age.isdigit():
+            print("Please enter a number. Dumbass.... ")
+        else:
+            print("Interesting...")
+            break
+    while True:
+        height = input("How tall are you in inches? ")
+        if not height.isdigit():
+            print("This is not a number")
+        else:
+            print("Pfft....")
+            break
+    while True:
+        weight = input("How much do you weight? It's Ok, I won't make fun of you. :^) Unless you're AJ. ")
+        if not weight.isdigit():
+            print("This is not a number dumbass.")
+        else:
+            print("Not bad...")
+            break
+
+    emotion = input("Are you Tired, Bored, or Hungry? ")
+    print("Alright.")
+
+    color = input("What is your favorite color? ")
+    print("...")
+
+    kappa = input("Last question. Do you believe this survey was trash and pointless? Yes or No.")
+    while True:
+        if not kappa.lower() in ("yes", "no"):
+            kappa = input("YES OR NO? ")
+        else:
+            print("Well, thanks for taking survey. Your results are below.")
+            break
+
+    if age >= str(21):
+        print(f"You're {age} years old? Boomer, LUL. What are you, Loki?")
+    elif age >= str(12):
+        print(f"You're {age} years old? You're still a teen, enjoy life.")
+    else:
+        print(f"You're {age} years old? You're literally a child lmao")
+
+    if height >= str(67):
+        print("Damn, you're tall.")
+    else:
+        print("You're under 5'5, therefore, you're shorter than AJ.")
+
+    print(f"You say that you're feeling {emotion}. This question was pointless because I really don't care.")
+    print(f"Also, you're favorite color is {color}? You disgust me.")
+
+    if kappa.lower() == "yes":
+        print(f"Why thank you {name} <3. ")
+    elif kappa.lower() == "no":
+        print(f"Well fuck you {name} for saying this was pointless.")
+def no():
+    print ("Then why are you here? Goodbye.")
+    sys.exit()
+survey()
+print("Well thank you for taking this beautiful mess. Goodbye.")
