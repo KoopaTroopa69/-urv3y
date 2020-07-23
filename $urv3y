@@ -1,6 +1,9 @@
-                    #Welcum 2 Kappa legit 10/10 Survey
-                #Plx enjoi n donat bons pls :^)
+# Welcome to my Survey
+# This survey is to practice my knowledge as a beginner.
+# All comments and tips are appreciated. :^)
 import sys
+
+
 def survey():
     print("Hi, welcome to my short and trash personal survey. Are you interested in completing this survey?")
     while True:
@@ -9,19 +12,29 @@ def survey():
             yes()
             break
         elif answer.lower() == "no":
-            no()
+            secondchance = input("Are you sure? ")
+            if secondchance.lower() == "yes":
+                yes()
+            elif secondchance.lower() == "no":
+                no()
+            else:
+                print("Invalid answer.")
         else:
-            print("Invalid answer")
+            print("Invalid answer. ")
+
+
 def yes():
     name = input("First question, what is your name? ")
     print(f"Well hello {name} :^). Next question...")
+
     while True:
         age = input("How old are you? ")
         if not age.isdigit():
-            print("Please enter a number. Dumbass.... ")
+            print("Please enter a number. ")
         else:
             print("Interesting...")
             break
+
     while True:
         height = input("How tall are you in inches? ")
         if not height.isdigit():
@@ -29,49 +42,87 @@ def yes():
         else:
             print("Pfft....")
             break
+
     while True:
-        weight = input("How much do you weight? It's Ok, I won't make fun of you. :^) Unless you're AJ. ")
+        weight = input("How much do you weight in pounds? ")
         if not weight.isdigit():
-            print("This is not a number dumbass.")
+            print("This is not a number.")
         else:
             print("Not bad...")
             break
 
-    emotion = input("Are you Tired, Bored, or Hungry? ")
-    print("Alright.")
+    while True:
+        emotion = input("Are you Tired, Bored, or Hungry? ")
+        if not emotion.lower() in ("Tired", "Bored", "Hungry"):
+            print("Your input didn't answer the question. ")
+        else:
+            print("Alright.")
+            break
 
     color = input("What is your favorite color? ")
-    print("...")
-
-    kappa = input("Last question. Do you believe this survey was trash and pointless? Yes or No.")
     while True:
-        if not kappa.lower() in ("yes", "no"):
-            kappa = input("YES OR NO? ")
+        if color.isdigit():
+            color = input("Damn I didn't know your favorite color was a number. Now enter an actually color please. ")
+        else:
+            print("...")
+            break
+
+    enjoyed = input("Last question. Did you enjoy this survey? Yes or No. ")
+    while True:
+        if not enjoyed.lower() in ("yes", "no"):
+            enjoyed = input("YES OR NO? ")
         else:
             print("Well, thanks for taking survey. Your results are below.")
             break
 
-    if age >= str(21):
-        print(f"You're {age} years old? Boomer, LUL. What are you, Loki?")
-    elif age >= str(12):
+    # Age
+    if int(age) >= 21:
+        print(f"You're {age} years old? You're not that old. ")
+    elif int(age) >= 12:
         print(f"You're {age} years old? You're still a teen, enjoy life.")
     else:
-        print(f"You're {age} years old? You're literally a child lmao")
+        print(f"You're {age} years old? You must be a really smart kid if you knew how to access this code somehow.")
 
-    if height >= str(67):
+    # Height
+    if int(height) >= 66:
         print("Damn, you're tall.")
     else:
         print("You're under 5'5, therefore, you're shorter than AJ.")
 
-    print(f"You say that you're feeling {emotion}. This question was pointless because I really don't care.")
-    print(f"Also, you're favorite color is {color}? You disgust me.")
+    # Weight
+    if int(weight) >= 200:
+        print(f"Your weight {weight} pounds. You're above average but you're still perfect the way you are. :^) ")
+    elif 200 <= int(weight) >= 135:
+        print(f"{weight} pounds is about average.")
+    elif int(weight) <= 100:
+        print(f"Your weight is {weight} pounds? You're under average but you're still perfect the way you are. :^) ")
 
-    if kappa.lower() == "yes":
-        print(f"Why thank you {name} <3. ")
-    elif kappa.lower() == "no":
-        print(f"Well fuck you {name} for saying this was pointless.")
+    # Emotion
+    if emotion.lower() == "tired":
+        print(f"You say that you're feeling {emotion}. You should get rest. Take a small nap. ")
+    elif emotion.lower() == "hungry":
+        print(f"You say that you're feeling {emotion}. Why don't you stop what you're doing and eat some food. Like a "
+              f"small snack or something. ")
+    elif emotion.lower() == "bored":
+        print(f" If you're {emotion}, you should watch some cute otter videos. They're pretty interesting :^). ")
+    
+    # Color
+    if color.lower() == "pink":
+        print("My favorite color is also pink :D ")
+    else:
+        print(f"Also, you're favorite color is {color}? Well my favorite color is pink. :) ")
+
+    # Enjoyed
+    if enjoyed == "yes":
+        print(f"Why thank you {name} enjoying this survey <3. ")
+    else:
+        print(f"Aww well that's too bad if you didn't like this survey {name}. ")
+
+
 def no():
-    print ("Then why are you here? Goodbye.")
+    print("Then why are you here? Goodbye.")
     sys.exit()
+
+
 survey()
-print("Well thank you for taking this beautiful mess. Goodbye.")
+print("Well thank you for taking this small survey! Goodbye. ")
